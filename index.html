@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -6,15 +7,7 @@
     <title>Hệ thống giải quyết TTHC</title>
 </head>
 <body>
-
 <style>
-:root {
-    --main-bg: #f7f9fc;
-    --card-bg: #ffffff;
-    --text-main: #1f2937;
-    --shadow-soft: 0 8px 20px rgba(0,0,0,0.06);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -24,254 +17,278 @@
 
 body {
     min-height: 100vh;
-    background: url("tbg.jpg") no-repeat center center fixed;
+    padding: 10px 20px;
+
+    background: url(igate/bg-trongdong.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    padding: 20px;
 }
 
 .container {
-    max-width: 900px;
-    margin: auto;
-
-    /* ẨN NỀN */
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-
-    border-radius: 0;
-    padding: 0;
-
-    box-shadow: none;
+    max-width: 1170px;
+    margin: 0 auto;
     text-align: center;
 }
 
-/* HEADER */
-.header {
-    margin-bottom: 25px;
-}
+/* .header {
+    margin-bottom: 15px;
+} */
 
 .emblem {
-    width: 70px;
-    margin-bottom: 10px;
+    width: 60px;
 }
 
 .header h1 {
     font-size: 20px;
-    color: var(--text-main);
-    font-weight: 700;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0px;
 }
 
 .logo-vnpt {
-    width: 140px;
-    margin-top: 8px;
+    width: 150px;
 }
 
-/* BUTTON LIST */
 .button-list {
     display: flex;
+    /* grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, auto); */
+    gap: 5px;
     flex-direction: column;
-    gap: 14px;
+}
+.button-list .item{
+    border: 1px solid #f1f1f1;
+    padding: 5px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, auto);
+    gap: 15px;
+}
+.button-list .item:hover {
+    box-shadow: 0 0 4px #ccc;
+    cursor: pointer;
 }
 
+.button-list .item h1{    
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    height: 44px;
+}
 .btn-item {
+    background-color: #fff3e6; /* Màu cam nhạt giống ảnh */
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+    border-radius: 50px; /* Bo tròn cực đại */
+    transition: transform 0.2s, background-color 0.2s;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: 100%;
+    text-align: center;
     display: flex;
     align-items: center;
-
-    /* trắng trung tính, không vàng */
-    background: rgba(255, 255, 255, 0.85);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    color: var(--text-main);
-    text-decoration: none;
-    padding: 12px 18px;
-    border-radius: 999px;
-
-    transition: all 0.25s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
-
+.button-list .item .btn-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .btn-item:hover {
-    background: rgba(255, 255, 255, 0.92);
+    background-color: #ffe8cc;
     transform: translateY(-2px);
 }
 
 .icon {
-    width: 38px;
-    height: 38px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    flex-shrink: 0;
 }
 
 .text {
     flex: 1;
-    font-size: 14px;
-    font-weight: 700;
     text-align: center;
-    padding: 0 10px;
+    font-weight: bold;
+    font-size: 14px;
+    padding-right: 40px;
     text-transform: uppercase;
-    line-height: 1.35;
+}
+.large{
+    font-size: 1.2rem;
+    line-height: 36px;
+}
+.header-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.first-item{
+    color: #fff;
+    font-size: 1.6rem;
+    background: #bd5656d1;
+}
+.first-item:hover{
+   color: #333;
+}
+.correct-animation {
+    outline-width: 1px;
+    outline-offset: 0;
+    outline-color: #8d3d3dd1;
+    outline-style: solid;
+    animation: animateOutline 1.2s ease infinite;
+    margin: 5px 0px;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-    body {
-        padding: 12px;
+@keyframes animateOutline {
+    0% {
+        outline-width: 1px;
+        outline-offset: 0;
+        outline-color: #0082ce00
     }
 
-    .container {
-        padding: 20px 15px;
-        border-radius: 12px;
+    10% {
+        outline-color: #be6666d1;
     }
 
+    50% {
+        outline-width: 5px;
+        outline-offset: 2px;
+        outline-color: #0082ce00
+    }
+
+    to {
+        outline-width: 5px;
+        outline-offset: 2px;
+        outline-color: #6660
+    }
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 767px) {
+    body{padding: 10px;}
+    .button-list{display: block;}
+    .btn-item{margin-bottom: 10px;}
+    .button-list .item{margin-bottom: 10px;}
+    .button-list .item .btn-item{margin-bottom: 0px;}
+    .button-list .item{display: flex; flex-direction: column;}
     .header h1 {
         font-size: 16px;
     }
-
-    .emblem {
-        width: 55px;
+    .text {
+        font-size: 14px;
+        line-height: 20px;
     }
-
-    .logo-vnpt {
-        width: 120px;
-    }
-
-    @media (max-width: 600px) {
-		.text {
-			font-size: 13px;
-		}
+	.emblem {
+		width: 40px;
 	}
-
+	.logo-vnpt {
+		width: 120px;
+	}
+    .button-list .item h1{height: auto;}
 }
-.datetime {
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #1f2937;
-    letter-spacing: 0.5px;
-}
-.header {
-    background: rgba(255, 255, 255, 0.8); /* tăng độ trắng */
-    backdrop-filter: blur(10px) saturate(100%);
-    -webkit-backdrop-filter: blur(10px) saturate(100%);
-
-    border-radius: 16px;
-    padding: 20px 15px;
-    margin-bottom: 22px;
-}
-
 </style>
+    <div class="container">
+		<header class="header">
+			<img src="quochuy.png" alt="Quốc huy" class="emblem">
+			<h1>HỆ THỐNG GIẢI QUYẾT TTHC CẤP BỘ NGÀNH<br>TỈNH CAO BẰNG</h1>
+			<img src="vnpt.png" alt="VNPT Logo" class="logo-vnpt">
+			<div class="datetime" id="datetime"></div>
+		</header>
 
-<div class="container">
-    <header class="header">
-        <img src="quochuy.png" alt="Quốc huy" class="emblem">
-        <h1>HỆ THỐNG GIẢI QUYẾT TTHC CẤP BỘ NGÀNH<br>TỈNH CAO BẰNG</h1>
-        <img src="vnpt.png" alt="VNPT Logo" class="logo-vnpt">
-		<div class="datetime" id="datetime"></div>
-    </header>
+        <div class="button-list">
+            <a target="_blank" href="https://dieuphoi.dichvucong.gov.vn" class="btn-item first-item correct-animation">
+                    <img src="quochuy.png" alt="Emblem" class="icon">
+                    <span class="text">HỆ THỐNG ĐIỀU PHỐI GIẢI QUYẾT THỦ TỤC HÀNH CHÍNH</span>
+            </a>
+            <div class="item">
+                <a target="_blank" href="https://zalo.me/g/ymehds290" class="btn-item">
+                    <img src="zalo.jpg" alt="Zalo" class="icon">
+                    <span class="text">NHÓM ZALO – BỘ NÔNG NGHIỆP VÀ MÔI TRƯỜNG</span>
+                </a>
+                                
+                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdZXsmNoOj2s2PCSn-BQtrIFehNIg7EMK-HIXyQWcHWUcyClw/viewform" class="btn-item">
+                    <img src="request.png" alt="Gửi yêu cầu hồ trợ CB" class="icon">
+                    <span class="text">Gửi yêu cầu hồ trợ CB</span>
+                </a>
+            </div>
+            <div class="item">
+                <a target="_blank" href="https://zalo.me/g/irczqm915" class="btn-item">
+                    <img src="zalo.jpg" alt="Zalo" class="icon">
+                    <span class="text">NHÓM ZALO – BỘ GIÁO DỤC ĐÀO TẠO</span>
+                </a>
+                                
+                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSd6pjxKuIsZXGHsUqXxx7RfuR0hPhzOiT3_1PMC_bf6H5c-Ng/viewform" class="btn-item">
+                    <img src="request.png" alt="Gửi yêu cầu hồ trợ CB" class="icon">
+                    <span class="text">Gửi yêu cầu hồ trợ CB</span>
+                </a>
+            </div>
+		    <div class="item">
+                <a target="_blank" href="https://zalo.me/g/wcnsxo713" class="btn-item">
+                    <img src="zalo.jpg" alt="Zalo" class="icon">
+                    <span class="text">NHÓM ZALO – BỘ CÔNG THƯƠNG</span>
+                </a>
+                                
+                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSe8NJktGb3ArZ9pCx-1CMoTTq3Cg7ftzUtQwDFq5Y1hurNiLQ/viewform" class="btn-item">
+                    <img src="request.png" alt="Gửi yêu cầu hồ trợ CB" class="icon">
+                    <span class="text">Gửi yêu cầu hồ trợ CB</span>
+                </a>
+            </div>
 
-    <div class="button-list">
+            <div class="item">
+                <a target="_blank" href="https://zalo.me/g/mtqydf258" class="btn-item">
+                    <img src="zalo.jpg" alt="Zalo" class="icon">
+                    <span class="text">NHÓM ZALO – BỘ XÂY DỰNG</span>
+                </a>
+                                
+                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfAyESrSt4YWknYMe6ac3KOvCVDHwKnSc_0_QCANA4wSUXBMA/viewform" class="btn-item">
+                    <img src="request.png" alt="Gửi yêu cầu hồ trợ CB" class="icon">
+                    <span class="text">Gửi yêu cầu hồ trợ CB</span>
+                </a>
+            </div>
+                        
+            <div class="item">
+                <a target="_blank" href="https://zalo.me/g/scfshc387" class="btn-item">
+                    <img src="zalo.jpg" alt="Zalo" class="icon">
+                    <span class="text">NHÓM ZALO – BỘ NỘI VỤ</span>
+                </a>
+                                       
+                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScryEB1nQVAwVFFWr6vCE4Evg7HQTBQU2hCPneTgfPxb4_nRA/viewform" class="btn-item">
+                    <img src="request.png" alt="Gửi yêu cầu hồ trợ CB" class="icon">
+                    <span class="text">Gửi yêu cầu hồ trợ CB</span>
+                </a> 
+            </div>
 
-		<a href="https://dieuphoi.dichvucong.gov.vn"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="quochuy.png" class="icon">
-			<span class="text">HỆ THỐNG ĐIỀU PHỐI GIẢI QUYẾT TTHC</span>
-		</a>
-
-		<a href="https://zalo.me/g/ymehds290"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="zalo.jpg" class="icon">
-			<span class="text">NHÓM ZALO – BỘ NÔNG NGHIỆP VÀ MÔI TRƯỜNG</span>
-		</a>
-
-		<a href="https://zalo.me/g/irczqm915"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="zalo.jpg" class="icon">
-			<span class="text">NHÓM ZALO – BỘ GIÁO DỤC ĐÀO TẠO</span>
-		</a>
-
-		<a href="https://zalo.me/g/wcnsxo713"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="zalo.jpg" class="icon">
-			<span class="text">NHÓM ZALO – BỘ CÔNG THƯƠNG</span>
-		</a>
-
-		<a href="https://zalo.me/g/mtqydf258"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="zalo.jpg" class="icon">
-			<span class="text">NHÓM ZALO – BỘ XÂY DỰNG</span>
-		</a>
-
-		<a href="https://zalo.me/g/scfshc387"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="zalo.jpg" class="icon">
-			<span class="text">NHÓM ZALO – BỘ NỘI VỤ</span>
-		</a>
-
-		<a href="https://zalo.me/g/zfkpvk030"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="zalo.jpg" class="icon">
-			<span class="text">NHÓM ZALO – BỘ Y TẾ</span>
-		</a>
-		<a href="https://zalo.me/g/hemykt760"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="zalo.jpg" class="icon">
-			<span class="text">NHÓM ZALO – BỘ KHOA HỌC VÀ CÔNG NGHỆ</span>
-		</a>
-
-		<a href="https://drive.google.com/drive/folders/1lAF2UIMD1WMk4eAyhnFgq_75rdduR5jE"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="quochuy.png" class="icon">
-			<span class="text">HƯỚNG DẪN SỬ DỤNG – DVC 7 BỘ NGÀNH</span>
-		</a>
-
-		<a href="https://drive.google.com/drive/folders/1caWUdq4JvRo9DOMDM99Z-4xzs4_72JGL"
-		   target="_blank" rel="noopener noreferrer"
-		   class="btn-item">
-			<img src="quochuy.png" class="icon">
-			<span class="text">VĂN BẢN - CĂN CỨ PHÁP LÝ</span>
-		</a>
-
-	</div>
-
-</div>
-<script>
-function updateDateTime() {
-    const now = new Date();
-
-    const time = now.toLocaleTimeString('vi-VN', {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-    });
-
-    const date = now.toLocaleDateString('vi-VN', {
-        weekday: 'long',
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
-
-    document.getElementById('datetime').innerText =
-        `${time} | ${date}`;
-}
-
-updateDateTime();
-setInterval(updateDateTime, 1000);
-</script>
+            <div class="item">
+                <a target="_blank" href="https://zalo.me/g/zfkpvk030" class="btn-item">
+                    <img src="zalo.jpg" alt="Zalo" class="icon">
+                    <span class="text">NHÓM ZALO – BỘ Y TẾ</span>
+                </a>
+                                
+                <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfG2PBdhakHzWQMbwn8IOS6OX44rBd12K-pWyEL10rTypJ1Aw/viewform?usp=send_form" class="btn-item">
+                    <img src="request.png" alt="Gửi yêu cầu hồ trợ CB" class="icon">
+                    <span class="text">Gửi yêu cầu hồ trợ CB</span>
+                </a> 
+            </div>
+            <a target="_blank" href="https://drive.google.com/drive/folders/1caWUdq4JvRo9DOMDM99Z-4xzs4_72JGL" class="btn-item last-item">
+                <img src="quochuy.png" alt="Emblem" class="icon">
+                <span class="text">Căn cứ pháp lý</span>
+            </a>
+            <a target="_blank" href="https://drive.google.com/drive/folders/1lAF2UIMD1WMk4eAyhnFgq_75rdduR5jE" class="btn-item last-item">
+                <img src="quochuy.png" alt="Emblem" class="icon">
+                <span class="text">Hướng dẫn sử dụng - DVC 7 Bộ ngành</span>
+            </a>
+			<a target="_blank" href="#" class="btn-item last-item">
+                <img src="quochuy.png" alt="Emblem" class="icon">
+                <span class="text">SỐ ĐIỆN THOẠI HỖ TRỢ: 02063.856.000</span>
+            </a>
+        </div>
+        
+    </div>
 
 </body>
 </html>

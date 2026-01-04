@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống giải quyết TTHC</title>
+</head>
+<body>
+
+<style>
+:root {
+    --main-bg: #f7f9fc;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --shadow-soft: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url("tbg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+
+    /* ẨN NỀN */
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    border-radius: 0;
+    padding: 0;
+
+    box-shadow: none;
+    text-align: center;
+}
+
+/* HEADER */
+.header {
+    margin-bottom: 25px;
+}
+
+.emblem {
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 20px;
+    color: var(--text-main);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.logo-vnpt {
+    width: 140px;
+    margin-top: 8px;
+}
+
+/* BUTTON LIST */
+.button-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.btn-item {
+    display: flex;
+    align-items: center;
+
+    /* trắng trung tính, không vàng */
+    background: rgba(255, 255, 255, 0.85);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 999px;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.btn-item:hover {
+    background: rgba(255, 255, 255, 0.92);
+    transform: translateY(-2px);
+}
+
+.icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 10px;
+    text-transform: uppercase;
+    line-height: 1.35;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .header h1 {
+        font-size: 16px;
+    }
+
+    .emblem {
+        width: 55px;
+    }
+
+    .logo-vnpt {
+        width: 120px;
+    }
+
+    @media (max-width: 600px) {
+		.text {
+			font-size: 13px;
+		}
+	}
+
+}
+.datetime {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    letter-spacing: 0.5px;
+}
+.header {
+    background: rgba(255, 255, 255, 0.8); /* tăng độ trắng */
+    backdrop-filter: blur(10px) saturate(100%);
+    -webkit-backdrop-filter: blur(10px) saturate(100%);
+
+    border-radius: 16px;
+    padding: 20px 15px;
+    margin-bottom: 22px;
+}
+
+</style>
+
+<div class="container">
+    <header class="header">
+        <img src="quochuy.png" alt="Quốc huy" class="emblem">
+        <h1>HỆ THỐNG GIẢI QUYẾT TTHC CẤP BỘ NGÀNH<br>TỈNH CAO BẰNG</h1>
+        <img src="vnpt.png" alt="VNPT Logo" class="logo-vnpt">
+		<div class="datetime" id="datetime"></div>
+    </header>
+
+    <div class="button-list">
+
+		<a href="https://dieuphoi.dichvucong.gov.vn"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="quochuy.png" class="icon">
+			<span class="text">HỆ THỐNG ĐIỀU PHỐI GIẢI QUYẾT TTHC</span>
+		</a>
+
+		<a href="https://zalo.me/g/ymehds290"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="zalo.jpg" class="icon">
+			<span class="text">NHÓM ZALO – BỘ NÔNG NGHIỆP VÀ MÔI TRƯỜNG</span>
+		</a>
+
+		<a href="https://zalo.me/g/irczqm915"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="zalo.jpg" class="icon">
+			<span class="text">NHÓM ZALO – BỘ GIÁO DỤC ĐÀO TẠO</span>
+		</a>
+
+		<a href="https://zalo.me/g/wcnsxo713"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="zalo.jpg" class="icon">
+			<span class="text">NHÓM ZALO – BỘ CÔNG THƯƠNG</span>
+		</a>
+
+		<a href="https://zalo.me/g/mtqydf258"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="zalo.jpg" class="icon">
+			<span class="text">NHÓM ZALO – BỘ XÂY DỰNG</span>
+		</a>
+
+		<a href="https://zalo.me/g/scfshc387"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="zalo.jpg" class="icon">
+			<span class="text">NHÓM ZALO – BỘ NỘI VỤ</span>
+		</a>
+
+		<a href="https://zalo.me/g/zfkpvk030"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="zalo.jpg" class="icon">
+			<span class="text">NHÓM ZALO – BỘ Y TẾ</span>
+		</a>
+		<a href="https://zalo.me/g/hemykt760"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="zalo.jpg" class="icon">
+			<span class="text">NHÓM ZALO – BỘ KHOA HỌC VÀ CÔNG NGHỆ</span>
+		</a>
+
+		<a href="https://drive.google.com/drive/folders/1lAF2UIMD1WMk4eAyhnFgq_75rdduR5jE"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="quochuy.png" class="icon">
+			<span class="text">HƯỚNG DẪN SỬ DỤNG – DVC 7 BỘ NGÀNH</span>
+		</a>
+
+		<a href="https://drive.google.com/drive/folders/1caWUdq4JvRo9DOMDM99Z-4xzs4_72JGL"
+		   target="_blank" rel="noopener noreferrer"
+		   class="btn-item">
+			<img src="quochuy.png" class="icon">
+			<span class="text">VĂN BẢN - CĂN CỨ PHÁP LÝ</span>
+		</a>
+
+	</div>
+
+</div>
+<script>
+function updateDateTime() {
+    const now = new Date();
+
+    const time = now.toLocaleTimeString('vi-VN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+
+    const date = now.toLocaleDateString('vi-VN', {
+        weekday: 'long',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+
+    document.getElementById('datetime').innerText =
+        `${time} | ${date}`;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+</script>
+
+</body>
+</html>
